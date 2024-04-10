@@ -5,9 +5,12 @@ const port = process.env.PORT || 1234
 const app = express()
 const routes = require('./src/routes')
 
+app.use(express.json())
+
 const corsOptions = {
   origin: ['http://localhost:5173', 'http://localhost:8080']
 }
+
 app.use(cors(corsOptions))
 app.use('/', routes)
 
